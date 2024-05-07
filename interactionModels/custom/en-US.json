@@ -18,59 +18,91 @@
           "slots": [],
           "name": "HelloWorldIntent",
           "samples": [
+            "hey",
             "hello",
             "how are you",
             "say hi world",
             "say hi",
             "hi",
             "say hello world",
-            "say hello",
-            "hey",
-            "hey there",
-            "hi cart compass",
-            "hello cart compass",
-            "hey there cart compass"
-          ]
-        },
-        {
-          "slots": [
-            {
-              "name": "userLocation",
-              "type": "AMAZON.US_CITY"
-            },
-            {
-              "name": "foodType",
-              "type": "foodType"
-            },
-            {
-              "name": "givenLocation",
-              "type": "AMAZON.US_CITY"
-            }
-          ],
-          "name": "CartCompassIntent",
-          "samples": [
-            "Find me the nearest food carts around {givenLocation}",
-            "Find me the nearest food carts around with vegetarian options",
-            "Find me the nearest food carts around with vegan options",
-            "Find me the nearest food carts around with gluten free options",
-            "Find the nearest {foodType} food carts near {userLocation}",
-            "Find the nearest {foodType} food carts",
-            "Find food carts near me {userLocation}",
-            "Find food carts near me",
-            "Find food carts near {givenLocation}",
-            "Where is the closest food cart",
-            "Find the closest food cart",
-            "Food carts near me",
-            "Where is the nearest food cart",
-            "Food carts near me {userLocation}",
-            "Food carts near {givenLocation}",
-            "Find food carts near me {userLocation}",
-            "Find food carts near {givenLocation}"
+            "say hello"
           ]
         },
         {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "hours",
+              "type": "AMAZON.TIME"
+            },
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "food",
+              "type": "AMAZON.Food"
+            },
+            {
+              "name": "drink",
+              "type": "AMAZON.Drink"
+            },
+            {
+              "name": "dessert",
+              "type": "AMAZON.Dessert"
+            },
+            {
+              "name": "country",
+              "type": "AMAZON.Country"
+            },
+            {
+              "name": "neighborhood",
+              "type": "neighborhood"
+            },
+            {
+              "name": "rating",
+              "type": "AMAZON.AggregateRating"
+            },
+            {
+              "name": "cartName",
+              "type": "AMAZON.FoodEstablishment"
+            }
+          ],
+          "name": "FindACartIntent",
+          "samples": [
+            "find an {food} cart",
+            "find a cart with {food} and {food}",
+            "find an {country} cart",
+            "what carts are open {hours}",
+            "find carts open at {hours}",
+            "find carts open {hours}",
+            "find {rating} carts",
+            "where can I get {food}",
+            "find {country} food",
+            "Find a cart with {country} food",
+            "find {dessert} carts",
+            "find {drink} carts",
+            "find the best cart by {rating}",
+            "find {cartName}",
+            "look up {cartName}",
+            "Find {food} cart with the best {rating}",
+            "Where can I find {country} food",
+            "Find a {food} cart",
+            "Find {food}",
+            "Find a {country} cart in the {neighborhood} neighborhood",
+            "Find a cart with {drink}",
+            "Find a cart with {dessert}",
+            "Find a {food} cart in the {neighborhood} neighborhood",
+            "Find a cart in the {neighborhood} neighborhood",
+            "Find a {country} cart",
+            "Find a cart with {food}"
+          ]
         }
       ],
       "types": [
@@ -78,29 +110,417 @@
           "values": [
             {
               "name": {
-                "value": "spicy"
-              }
+                "value": "Clinton"
+              },
+              "id": "1"
             },
             {
               "name": {
-                "value": "gluten free"
-              }
+                "value": "Division"
+              },
+              "id": "2"
             },
             {
               "name": {
-                "value": "vegetarian"
-              }
+                "value": "Belmont"
+              },
+              "id": "3"
             },
             {
               "name": {
-                "value": "vegan"
-              }
+                "value": "MLK"
+              },
+              "id": "4"
+            },
+            {
+              "name": {
+                "value": "Albina"
+              },
+              "id": "5"
+            },
+            {
+              "name": {
+                "value": "Alberta"
+              },
+              "id": "6"
+            },
+            {
+              "name": {
+                "value": "Woodlawn"
+              },
+              "id": "7"
+            },
+            {
+              "name": {
+                "value": "Woodstock"
+              },
+              "id": "8"
+            },
+            {
+              "name": {
+                "value": "Woodland Park"
+              },
+              "id": "9"
+            },
+            {
+              "name": {
+                "value": "University Park"
+              },
+              "id": "10"
+            },
+            {
+              "name": {
+                "value": "Sunnyside"
+              },
+              "id": "11"
+            },
+            {
+              "name": {
+                "value": "Burlingame"
+              },
+              "id": "12"
+            },
+            {
+              "name": {
+                "value": "Northwest"
+              },
+              "id": "13"
+            },
+            {
+              "name": {
+                "value": "South"
+              },
+              "id": "14"
+            },
+            {
+              "name": {
+                "value": "Sellwood"
+              },
+              "id": "15"
+            },
+            {
+              "name": {
+                "value": "Sellwood-Moreland "
+              },
+              "id": "16"
+            },
+            {
+              "name": {
+                "value": "St. Johns"
+              },
+              "id": "17"
+            },
+            {
+              "name": {
+                "value": "Russell"
+              },
+              "id": "18"
+            },
+            {
+              "name": {
+                "value": "Richmond"
+              },
+              "id": "19"
+            },
+            {
+              "name": {
+                "value": "Reed"
+              },
+              "id": "20"
+            },
+            {
+              "name": {
+                "value": "Piedmont"
+              },
+              "id": "21"
+            },
+            {
+              "name": {
+                "value": "Pearl District"
+              },
+              "id": "22"
+            },
+            {
+              "name": {
+                "value": "Southwest"
+              },
+              "id": "23"
+            },
+            {
+              "name": {
+                "value": "Southeast"
+              },
+              "id": "24"
+            },
+            {
+              "name": {
+                "value": "North"
+              },
+              "id": "25"
+            },
+            {
+              "name": {
+                "value": "Northeast"
+              },
+              "id": "26"
+            },
+            {
+              "name": {
+                "value": "Parkrose"
+              },
+              "id": "27"
+            },
+            {
+              "name": {
+                "value": "Overlook"
+              },
+              "id": "28"
+            },
+            {
+              "name": {
+                "value": "Old Town"
+              },
+              "id": "29"
+            },
+            {
+              "name": {
+                "value": "Northwest "
+              },
+              "id": "30"
+            },
+            {
+              "name": {
+                "value": "Tabor"
+              },
+              "id": "31"
+            },
+            {
+              "name": {
+                "value": "Multnomah Village"
+              },
+              "id": "32"
+            },
+            {
+              "name": {
+                "value": "Mount Tabor"
+              },
+              "id": "33"
+            },
+            {
+              "name": {
+                "value": "Mt. Scott"
+              },
+              "id": "34"
+            },
+            {
+              "name": {
+                "value": "Mt. Scott-Arleta"
+              },
+              "id": "35"
+            },
+            {
+              "name": {
+                "value": "Montavilla"
+              },
+              "id": "36"
+            },
+            {
+              "name": {
+                "value": "Lloyd District"
+              },
+              "id": "37"
+            },
+            {
+              "name": {
+                "value": "Linnton"
+              },
+              "id": "38"
+            },
+            {
+              "name": {
+                "value": "Lents"
+              },
+              "id": "39"
+            },
+            {
+              "name": {
+                "value": "Laurelhurst"
+              },
+              "id": "40"
+            },
+            {
+              "name": {
+                "value": "King"
+              },
+              "id": "41"
+            },
+            {
+              "name": {
+                "value": "Kerns"
+              },
+              "id": "42"
+            },
+            {
+              "name": {
+                "value": "Kenton"
+              },
+              "id": "43"
+            },
+            {
+              "name": {
+                "value": "Irvington"
+              },
+              "id": "44"
+            },
+            {
+              "name": {
+                "value": "Hosford-Abernethy"
+              },
+              "id": "45"
+            },
+            {
+              "name": {
+                "value": "Hollywood"
+              },
+              "id": "46"
+            },
+            {
+              "name": {
+                "value": "Hillsdale"
+              },
+              "id": "47"
+            },
+            {
+              "name": {
+                "value": "Goose Hollow"
+              },
+              "id": "48"
+            },
+            {
+              "name": {
+                "value": "Forest Park"
+              },
+              "id": "49"
+            },
+            {
+              "name": {
+                "value": "Eliot"
+              },
+              "id": "50"
+            },
+            {
+              "name": {
+                "value": "Eastmoreland"
+              },
+              "id": "51"
+            },
+            {
+              "name": {
+                "value": "Downtown"
+              },
+              "id": "52"
+            },
+            {
+              "name": {
+                "value": "Chinatown"
+              },
+              "id": "53"
+            },
+            {
+              "name": {
+                "value": "Cully"
+              },
+              "id": "54"
+            },
+            {
+              "name": {
+                "value": "Creston-Kenilworth"
+              },
+              "id": "55"
+            },
+            {
+              "name": {
+                "value": "Cathedral Park"
+              },
+              "id": "56"
+            },
+            {
+              "name": {
+                "value": "Buckman"
+              },
+              "id": "57"
+            },
+            {
+              "name": {
+                "value": "Felony Flats"
+              },
+              "id": "58"
+            },
+            {
+              "name": {
+                "value": "Brooklyn"
+              },
+              "id": "59"
+            },
+            {
+              "name": {
+                "value": "Brentwood"
+              },
+              "id": "60"
+            },
+            {
+              "name": {
+                "value": "Boise"
+              },
+              "id": "61"
+            },
+            {
+              "name": {
+                "value": "Arlington "
+              },
+              "id": "62"
+            },
+            {
+              "name": {
+                "value": "Foster-Powell"
+              },
+              "id": "63"
+            },
+            {
+              "name": {
+                "value": "Powell"
+              },
+              "id": "64"
+            },
+            {
+              "name": {
+                "value": "Foster"
+              },
+              "id": "65"
+            },
+            {
+              "name": {
+                "value": "Johnson Creek"
+              },
+              "id": "66"
+            },
+            {
+              "name": {
+                "value": "Arbor Lodge"
+              },
+              "id": "67"
+            },
+            {
+              "name": {
+                "value": "Alameda"
+              },
+              "id": "68"
             }
           ],
-          "name": "foodType"
+          "name": "neighborhood"
         }
       ],
-      "invocationName": "cart compass"
+      "invocationName": "cart chart"
     }
   }
 }
