@@ -1,0 +1,106 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello",
+            "hey",
+            "hey there",
+            "hi cart compass",
+            "hello cart compass",
+            "hey there cart compass"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "userLocation",
+              "type": "AMAZON.US_CITY"
+            },
+            {
+              "name": "foodType",
+              "type": "foodType"
+            },
+            {
+              "name": "givenLocation",
+              "type": "AMAZON.US_CITY"
+            }
+          ],
+          "name": "CartCompassIntent",
+          "samples": [
+            "Find me the nearest food carts around {givenLocation}",
+            "Find me the nearest food carts around with vegetarian options",
+            "Find me the nearest food carts around with vegan options",
+            "Find me the nearest food carts around with gluten free options",
+            "Find the nearest {foodType} food carts near {userLocation}",
+            "Find the nearest {foodType} food carts",
+            "Find food carts near me {userLocation}",
+            "Find food carts near me",
+            "Find food carts near {givenLocation}",
+            "Where is the closest food cart",
+            "Find the closest food cart",
+            "Food carts near me",
+            "Where is the nearest food cart",
+            "Food carts near me {userLocation}",
+            "Food carts near {givenLocation}",
+            "Find food carts near me {userLocation}",
+            "Find food carts near {givenLocation}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "spicy"
+              }
+            },
+            {
+              "name": {
+                "value": "gluten free"
+              }
+            },
+            {
+              "name": {
+                "value": "vegetarian"
+              }
+            },
+            {
+              "name": {
+                "value": "vegan"
+              }
+            }
+          ],
+          "name": "foodType"
+        }
+      ],
+      "invocationName": "cart compass"
+    }
+  }
+}
